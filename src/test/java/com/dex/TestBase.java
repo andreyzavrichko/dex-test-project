@@ -14,7 +14,7 @@ public class TestBase {
     @BeforeAll
     static void setUp() {
         Configuration.browserSize = "1600x780";
-        Configuration.baseUrl = "https://admin.zenit-bc.tech";
+        Configuration.baseUrl = "https://demo1.k3s.dex-it.ru";
 
         // Конфигурация для скачивания файлов
         Configuration.downloadsFolder = "src/test/resources/files";
