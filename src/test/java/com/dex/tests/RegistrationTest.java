@@ -115,7 +115,56 @@ public class RegistrationTest extends TestBase {
                 registrationPage.checkSuccessTitle("Вы успешно зарегестрировались"));
     }
 
-
+    @Test
+    @Feature("Регистрация")
+    @Story("Регистрация")
+    @DisplayName("Авторизация после регистрации")
+    @Severity(SeverityLevel.BLOCKER)
+    void authAfterRegTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        //Костыль, т.к. кнопка со второго раза срабатывает
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+    }
 
 
 }

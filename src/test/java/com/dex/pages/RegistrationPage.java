@@ -18,6 +18,7 @@ public class RegistrationPage {
             smsFormTitle = $(byText("подтвердите номер телефона")),
             profileTitle = $(byText("укажите ваши данные")),
             successTitle = $(byText("Вы успешно зарегестрировались")),
+            authRegButton = $(byText("Войти в аккаунт")),
             smsCodeInput = $("[ type=text]"),
             firstNameInput = $("[name=firstName]"),
             middleNameInput = $("[name=middleName]"),
@@ -33,6 +34,10 @@ public class RegistrationPage {
 
     public void clickAuthButton() {
         authButton.click();
+    }
+
+    public void clickAuthRegButton() {
+        authRegButton.click();
     }
 
     public void clickRegButton() {
