@@ -27,7 +27,6 @@ public class RegistrationTest extends TestBase {
     String confirmPassword = "Passw0rd%";
 
 
-
     @Test
     @Feature("Регистрация")
     @Story("Регистрация")
