@@ -1,7 +1,6 @@
 package com.dex.tests;
 
 import com.dex.TestBase;
-import com.dex.pages.AuthorizationPage;
 import com.dex.pages.RegistrationPage;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Feature;
@@ -14,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import static io.qameta.allure.Allure.step;
 
 @DisplayName("Регистрация")
-public class RegistrationTest extends TestBase {
+class RegistrationTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     Faker faker = new Faker();
     String phone = "7" + faker.number().digits(10);

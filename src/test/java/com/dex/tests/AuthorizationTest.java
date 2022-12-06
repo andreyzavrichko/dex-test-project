@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import static io.qameta.allure.Allure.step;
 
 @DisplayName("Авторизация")
-public class AuthorizationTest extends TestBase {
+class AuthorizationTest extends TestBase {
     AuthorizationPage authorizationPage = new AuthorizationPage();
 
     @Test

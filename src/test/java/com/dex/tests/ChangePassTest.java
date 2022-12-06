@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
-public class ChangePassTest extends TestBase {
+class ChangePassTest extends TestBase {
 
     ChangePassPage changePassPagePage = new ChangePassPage();
     RegistrationPage registrationPage = new RegistrationPage();
