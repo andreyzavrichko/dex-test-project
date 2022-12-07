@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
-public class NewsTest extends TestBase {
+class NewsTest extends TestBase {
     AuthorizationPage authorizationPage = new AuthorizationPage();
     NewsPage newsPage = new NewsPage();
 
