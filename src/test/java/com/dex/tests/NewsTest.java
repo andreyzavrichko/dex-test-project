@@ -98,5 +98,39 @@ class NewsTest extends TestBase {
                 newsPage.checkMoreNewsItem());
     }
 
+    @Test
+    @Feature("Новости")
+    @Story("Новости")
+    @DisplayName("Проверка скрытия новостей")
+    @Severity(SeverityLevel.BLOCKER)
+    void newsHideItemTest() {
+        step("Открываем сайт", () ->
+                authorizationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                authorizationPage.clickAuthButton());
+        step("Заполнить номер телефона", () ->
+                authorizationPage.typePhone("723555555241"));
+        step("Заполнить пароль", () ->
+                authorizationPage.typePassword("Passw0rd%"));
+        step("Нажать на кнопку Войти", () ->
+                authorizationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                authorizationPage.checkNewsLink());
+        step("Нажать на пункт меню Новости", () ->
+                newsPage.clickNewsLink());
+        // Костыль, т.к. кнопка не успевает стать активной, sleep - это плохо
+        step("Нажать на кнопку Показать ещё", () -> {
+            sleep(500);
+            newsPage.clickMoreButton();
+        });
+        step("Проверить подгрузку новостей", () ->
+                newsPage.checkMoreNewsItem());
+        step("Нажать на кнопку Скрыть все новости", () ->
+                newsPage.clickHideButton());
+        step("Проверить скрытие ранее загруженных новостей", () ->
+                newsPage.checkNewItem());
+
+    }
+
 
 }

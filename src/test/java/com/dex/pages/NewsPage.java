@@ -13,7 +13,7 @@ public class NewsPage {
     SelenideElement
             newsLink = $(byText("новости")),
             moreButton = $(byText("Показать ещё")),
-            more2Button = $(".News-NewsButtons_cls2__w-1MZ"),
+            hideButton = $(byText("Скрыть все новости")),
             newsTitle = $("h1"),
             newsItemTitle = $("h2");
 
@@ -23,12 +23,13 @@ public class NewsPage {
     public void clickNewsLink() {
         newsLink.click();
     }
-    public void click2NewsLink() {
-        more2Button.click();
-    }
 
     public void clickMoreButton() {
         moreButton.click();
+    }
+
+    public void clickHideButton() {
+        hideButton.click();
     }
 
     public void clickNewsItemTitle() {
