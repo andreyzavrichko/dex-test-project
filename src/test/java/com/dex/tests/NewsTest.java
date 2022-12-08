@@ -38,7 +38,7 @@ class NewsTest extends TestBase {
         step("Нажать на пункт меню Новости", () ->
                 newsPage.clickNewsLink());
         step("Проверить заголовок", () ->
-                newsPage.checkNewsTitle("Новости -"));
+                newsPage.checkNewsTitle("Новости"));
         step("Проверить количество новостей", () ->
                 newsPage.checkNewItem());
     }

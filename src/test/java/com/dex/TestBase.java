@@ -12,6 +12,7 @@ public class TestBase {
     static void setUp() {
         Configuration.browserSize = "1600x780";
         Configuration.baseUrl = "https://demo1.k3s.dex-it.ru";
+     //   Configuration.baseUrl = "http://localhost.client-dev.template.online:3000/";
 
          // Конфигурация для удаленного запуска
 //        Configuration.remote = "http://149.154.70.38:4444/wd/hub";

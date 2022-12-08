@@ -17,7 +17,7 @@ public class RegistrationPage {
             continueButton = $(byText("Продолжить")),
             smsFormTitle = $(byText("подтвердите номер телефона")),
             profileTitle = $(byText("укажите ваши данные")),
-            successTitle = $(byText("Вы успешно зарегестрировались")),
+            successTitle = $(byText("Вы успешно зарегистрировались")),
             authRegButton = $(byText("Войти в аккаунт")),
             smsCodeInput = $("[ type=text]"),
             firstNameInput = $("[name=firstName]"),

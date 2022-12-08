@@ -46,7 +46,7 @@ class ProfileTest extends TestBase {
             profilePage.checkLastName("фамилия");
             profilePage.checkMiddleName("отчество");
             profilePage.checkBirthday("08.12.2022");
-            profilePage.checkPhone("72355555524");
+            profilePage.checkPhone("723******24");
             profilePage.checkProfileNameTitle("Имя");
             profilePage.checkProfileLastNameTitle("Отчество");
             profilePage.checkProfileMiddleNameTitle("Фамилия");

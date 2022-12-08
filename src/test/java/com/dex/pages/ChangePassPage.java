@@ -14,6 +14,7 @@ public class ChangePassPage {
             phoneInput = $("[name=phone]"),
             smsCodeInput = $("[ type=text]"),
             continueButton = $(byText("Продолжить")),
+            reestablishButton = $(byText("Восстановить")),
             exitButton = $(byText("Выход")),
             passwordInput = $("[name=password]"),
             confirmPasswordInput = $("[name=confirmPassword]"),
@@ -34,6 +35,12 @@ public class ChangePassPage {
     public void clickAuthButton() {
         authButton.click();
     }
+    public void clickReestablishButton() {
+        reestablishButton.click();
+    }
+
+
+
 
     public void clickAuthRegButton() {
         authRegButton.click();

@@ -88,12 +88,12 @@ class ChangePassTest extends TestBase {
                 changePassPagePage.clickChangePassButton());
         step("Заполнить номер телефона", () ->
                 changePassPagePage.typePhone(phone));
-        step("Нажать на кнопку Продолжить", () ->
-                changePassPagePage.clickContinueButton());
+        step("Нажать на кнопку Восстановить", () ->
+                changePassPagePage.clickReestablishButton());
         step("Ввести код из смс", () ->
                 changePassPagePage.typeSmsCode(smsCode));
-        step("Нажать на кнопку Продолжить", () ->
-                changePassPagePage.clickContinueButton());
+        step("Нажать на кнопку Восстановить", () ->
+                changePassPagePage.clickReestablishButton());
         step("Заполнить поле Пароль", () ->
                 changePassPagePage.typePassword(password));
         step("Заполнить поле Подтвердить пароль", () ->

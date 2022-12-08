@@ -110,7 +110,7 @@ class RegistrationTest extends TestBase {
         step("Нажимаем кнопку Зарегистрироваться", () ->
                 registrationPage.clickSubmit());
         step("Проверить переход к экрану создания профиля", () ->
-                registrationPage.checkSuccessTitle("Вы успешно зарегестрировались"));
+                registrationPage.checkSuccessTitle("Вы успешно зарегистрировались"));
     }
 
     @Test
