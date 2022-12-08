@@ -12,8 +12,7 @@ public class AuthorizationPage {
     SelenideElement
             authButton = $(byText("Вход")),
             phoneInput = $("[name=phone]"),
-
-
+            rootElement = $("#root"),
             passwordInput = $("[name=password]"),
             submitButton = $("[type=submit]"),
             newsLink = $(byText("новости")),
@@ -59,6 +58,12 @@ public class AuthorizationPage {
     public void checkModalTitle(String value) {
         modalTitle.shouldHave(text(value));
     }
+    public void checkInputError(String value) {
+        rootElement.shouldHave(text(value));
+    }
+
+
+
 
     public void checkUnvisibleModal() {
         modalTitle.shouldNotBe(visible);
