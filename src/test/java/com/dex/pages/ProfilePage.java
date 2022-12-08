@@ -5,16 +5,11 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+
 
 public class ProfilePage {
     SelenideElement
-            authButton = $(byText("Вход")),
-            changePassButton = $(byText("Восстановить пароль")),
-            phoneInput = $("[name=phone]"),
-            smsCodeInput = $("[ type=text]"),
-            continueButton = $(byText("Продолжить")),
-            exitButton = $(byText("Выход")),
+
             passwordInput = $("[name=password]"),
             confirmPasswordInput = $("[name=confirmPassword]"),
             profileButton = $("[fill=none]"),
@@ -28,36 +23,27 @@ public class ProfilePage {
             profileLastNameTitle = $(byText("Отчество:")),
             profileReturnButton = $(byText("Вернуться к профилю")),
             rootElement = $("#root"),
+            profileBirthdayTitle = $(byText("Дата рождения:")),
+            profilePhoneTitle = $(byText("Телефон:")),
 
-    profileBirthdayTitle = $(byText("Дата рождения:")),
-    profilePhoneTitle = $(byText("Телефон:")),
+            submitButton = $("[type=submit]"),
 
-    submitButton = $("[type=submit]"),
-            successPassTitle = $(byText("Вы успешно восстановили пароль")),
             successChangePassTitle = $(byText("Вы успешно сменили пароль")),
 
-    firstNameInput = $("[name=firstName]"),
+            firstNameInput = $("[name=firstName]"),
             middleNameInput = $("[name=middleName]"),
             lastNameInput = $("[name=lastName]"),
-            birthDayInput = $("[name=birthDay]"),
+            birthDayInput = $("[name=birthDay]");
 
-    authRegButton = $(byText("Войти в аккаунт")),
 
-    confirmButton = $(byText("Подтвердить"));
-
-    public void openPage() {
-        open("/");
-    }
-
-    public void clickAuthButton() {
-        authButton.click();
-    }
     public void clickProfileLink() {
         profileLink.click();
     }
+
     public void clickEditButton() {
         editButton.click();
     }
+
     public void clickProfileReturnButton() {
         profileReturnButton.click();
     }
@@ -66,33 +52,11 @@ public class ProfilePage {
     public void clickChangePasswordButton() {
         changePasswordButton.click();
     }
+
     public void clickExitLink() {
         exitLink.click();
     }
 
-    public void clickAuthRegButton() {
-        authRegButton.click();
-    }
-
-    public void clickChangePassButton() {
-        changePassButton.click();
-    }
-
-    public void clickContinueButton() {
-        continueButton.click();
-    }
-
-    public void typePhone(String value) {
-        phoneInput.setValue(value);
-    }
-
-    public void clickConfirmButton() {
-        confirmButton.click();
-    }
-
-    public void typeSmsCode(String value) {
-        smsCodeInput.setValue(value);
-    }
 
     public void typePassword(String value) {
         passwordInput.setValue(value);
@@ -105,9 +69,7 @@ public class ProfilePage {
     public void clickSubmitButton() {
         submitButton.click();
     }
-    public void checkSuccessPassTitle(String value) {
-        successPassTitle.shouldHave(text(value));
-    }
+
     public void checkSuccessChangePassTitle(String value) {
         successChangePassTitle.shouldHave(text(value));
     }
@@ -116,14 +78,8 @@ public class ProfilePage {
         profileTitle.shouldHave(text(value));
     }
 
-
-
-
     public void clickProfileButton() {
         profileButton.click();
-    }
-    public void clickExitButton() {
-        exitButton.click();
     }
 
     public void checkFirstName(String value) {
@@ -145,6 +101,7 @@ public class ProfilePage {
     public void checkPhone(String value) {
         rootElement.shouldHave(text(value));
     }
+
     public void checkProfileNameTitle(String value) {
         profileNameTitle.shouldHave(text(value));
     }
@@ -176,6 +133,7 @@ public class ProfilePage {
     public void typeMiddleName(String value) {
         middleNameInput.setValue(value);
     }
+
     public void typeBirthDay(String value) {
         birthDayInput.setValue(value);
     }
