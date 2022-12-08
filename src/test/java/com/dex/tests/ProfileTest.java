@@ -75,77 +75,156 @@ class ProfileTest extends TestBase {
         });
     }
 
-        @Test
-        @Feature("Профиль")
-        @Story("Профиль")
-        @DisplayName("Редактирование профиля")
-        @Severity(SeverityLevel.BLOCKER)
-        void authAfterRegTest() {
-            step("Открываем сайт", () ->
-                    registrationPage.openPage());
-            step("Нажать кнопку Вход", () ->
-                    registrationPage.clickAuthButton());
-            step("Нажать ссылку Регистрация", () ->
-                    registrationPage.clickRegButton());
-            step("Заполнить номер телефона", () ->
-                    registrationPage.typePhone(phone));
-            step("Нажать на кнопку Продолжить", () ->
-                    registrationPage.clickContinueButton());
-            step("Ввести код из смс", () ->
-                    registrationPage.typeSmsCode(smsCode));
-            step("Нажать на кнопку Продолжить", () ->
-                    registrationPage.clickContinueButton());
-            step("Заполнить поле имя", () ->
-                    registrationPage.typeFirstName(firstName));
-            step("Заполнить поле фамилия", () ->
-                    registrationPage.typeMiddleName(middleName));
-            step("Заполнить поле отчество", () ->
-                    registrationPage.typeLastName(lastName));
-            step("Заполнить поле Дата рождения", () ->
-                    registrationPage.typeBirthDay(birthDay));
-            step("Заполнить поле Пароль", () ->
-                    registrationPage.typePassword(password));
-            step("Заполнить поле Подтвердить пароль", () ->
-                    registrationPage.typeConfirmPassword(confirmPassword));
-            step("Установить чек-бокс", () ->
-                    registrationPage.typeConfirmCheckbox());
-            step("Нажимаем кнопку Зарегистрироваться", () ->
-                    registrationPage.clickSubmit());
-            step("Нажимаем кнопку Войти в аккаунт", () ->
-                    registrationPage.clickAuthRegButton());
-            step("Заполнить номер телефона", () ->
-                    registrationPage.typePhone(phone));
-            step("Заполнить пароль", () ->
-                    registrationPage.typePassword(password));
-            step("Нажать на кнопку Войти", () ->
-                    registrationPage.clickSubmit());
-            step("Проверить переход в админ-панель", () ->
-                    registrationPage.checkNewsLink());
-            // Основное действие
-            step("Нажать кнопку Профиль", () ->
-                    profilePage.clickProfileButton());
-            step("Нажать ссылку Профиль", () ->
-                    profilePage.clickProfileLink());
-            step("Нажать ссылку Редактировать профиль", () ->
-                    profilePage.clickEditButton());
-            step("Заполнить поле имя", () ->
-                    profilePage.typeFirstName(newFirstName));
-            step("Заполнить поле фамилия", () ->
-                    profilePage.typeMiddleName(newMiddleName));
-            step("Заполнить поле отчество", () ->
-                    profilePage.typeLastName(newLastName));
-            step("Заполнить поле Дата рождения", () ->
-                    profilePage.typeBirthDay(newBirthDay));
-            step("Нажать кнопку Сохранить", () ->
-                    profilePage.clickSubmitButton());
-            // Проверяем новые данные
-            step("Проверить новое содержимое страницы Профиль", () -> {
-                profilePage.checkFirstName(newFirstName);
-                profilePage.checkLastName(newMiddleName);
-                profilePage.checkMiddleName(newLastName);
-            });
-
-        }
-
-
+    @Test
+    @Feature("Профиль")
+    @Story("Профиль")
+    @DisplayName("Редактирование профиля")
+    @Severity(SeverityLevel.BLOCKER)
+    void editProfileTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+        // Основное действие
+        step("Нажать кнопку Профиль", () ->
+                profilePage.clickProfileButton());
+        step("Нажать ссылку Профиль", () ->
+                profilePage.clickProfileLink());
+        step("Нажать ссылку Редактировать профиль", () ->
+                profilePage.clickEditButton());
+        step("Заполнить поле имя", () ->
+                profilePage.typeFirstName(newFirstName));
+        step("Заполнить поле фамилия", () ->
+                profilePage.typeMiddleName(newMiddleName));
+        step("Заполнить поле отчество", () ->
+                profilePage.typeLastName(newLastName));
+        step("Заполнить поле Дата рождения", () ->
+                profilePage.typeBirthDay(newBirthDay));
+        step("Нажать кнопку Сохранить", () ->
+                profilePage.clickSubmitButton());
+        // Проверяем новые данные
+        step("Проверить новое содержимое страницы Профиль", () -> {
+            profilePage.checkFirstName(newFirstName);
+            profilePage.checkLastName(newMiddleName);
+            profilePage.checkMiddleName(newLastName);
+        });
     }
+
+    @Test
+    @Feature("Профиль")
+    @Story("Профиль")
+    @DisplayName("Смена пароля в профиле")
+    @Severity(SeverityLevel.BLOCKER)
+    void changePassInProfileTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+        // Основное действие
+        step("Нажать кнопку Профиль", () ->
+                profilePage.clickProfileButton());
+        step("Нажать ссылку Профиль", () ->
+                profilePage.clickProfileLink());
+        step("Нажать на кнопку Сменить пароль", () ->
+                profilePage.clickChangePasswordButton());
+        step("Заполнить поле Пароль", () ->
+                profilePage.typePassword(newPassword));
+        step("Заполнить поле Подтвердить пароль", () ->
+                profilePage.typeConfirmPassword(newConfirmPassword));
+        step("Нажать кнопку Готово", () ->
+                profilePage.clickSubmitButton());
+        step("Проверить успешность смены пароля", () ->
+                profilePage.checkSuccessChangePassTitle("Вы успешно сменили пароль"));
+        step("Нажать кнопку Вернуться к профилю", () ->
+                profilePage.clickProfileReturnButton());
+        step("Нажать кнопку Профиль", () ->
+                profilePage.clickProfileButton());
+        step("Нажать ссылку Выход", () ->
+                profilePage.clickExitLink());
+        // Проверяем вход с новым паролем
+        step("Нажать кнопку Вход", () ->
+                authorizationPage.clickAuthButton());
+        step("Заполнить номер телефона", () ->
+                authorizationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                authorizationPage.typePassword(newPassword));
+        step("Нажать на кнопку Войти", () ->
+                authorizationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                authorizationPage.checkNewsLink());
+    }
+
+
+}

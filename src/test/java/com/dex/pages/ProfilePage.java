@@ -19,11 +19,14 @@ public class ProfilePage {
             confirmPasswordInput = $("[name=confirmPassword]"),
             profileButton = $("[fill=none]"),
             profileLink = $(byText("Профиль")),
+            exitLink = $(byText("Выход")),
             profileTitle = $(byText("Профиль пользователя")),
             editButton = $(byText("Редактировать профиль")),
+            changePasswordButton = $(byText("Сменить пароль")),
             profileNameTitle = $(byText("Имя:")),
             profileMiddleNameTitle = $(byText("Фамилия:")),
             profileLastNameTitle = $(byText("Отчество:")),
+            profileReturnButton = $(byText("Вернуться к профилю")),
             rootElement = $("#root"),
 
     profileBirthdayTitle = $(byText("Дата рождения:")),
@@ -31,6 +34,7 @@ public class ProfilePage {
 
     submitButton = $("[type=submit]"),
             successPassTitle = $(byText("Вы успешно восстановили пароль")),
+            successChangePassTitle = $(byText("Вы успешно сменили пароль")),
 
     firstNameInput = $("[name=firstName]"),
             middleNameInput = $("[name=middleName]"),
@@ -53,6 +57,17 @@ public class ProfilePage {
     }
     public void clickEditButton() {
         editButton.click();
+    }
+    public void clickProfileReturnButton() {
+        profileReturnButton.click();
+    }
+
+
+    public void clickChangePasswordButton() {
+        changePasswordButton.click();
+    }
+    public void clickExitLink() {
+        exitLink.click();
     }
 
     public void clickAuthRegButton() {
@@ -93,6 +108,10 @@ public class ProfilePage {
     public void checkSuccessPassTitle(String value) {
         successPassTitle.shouldHave(text(value));
     }
+    public void checkSuccessChangePassTitle(String value) {
+        successChangePassTitle.shouldHave(text(value));
+    }
+
     public void checkProfileTitle(String value) {
         profileTitle.shouldHave(text(value));
     }
