@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
+@DisplayName("Главная")
 class MainTest extends TestBase {
     AuthorizationPage authorizationPage = new AuthorizationPage();
     MainPage mainPage = new MainPage();
@@ -32,8 +33,6 @@ class MainTest extends TestBase {
         });
 
     }
-
-
 
 
 }

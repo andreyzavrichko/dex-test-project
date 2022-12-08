@@ -6,7 +6,6 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.actions;
 import static io.qameta.allure.Allure.step;
 
@@ -45,7 +44,7 @@ class AuthorizationTest extends TestBase {
         step("Нажать кнопку Вход", () ->
                 authorizationPage.clickAuthButton());
         step("Кликнуть в любом месте экрана", () ->
-        actions().moveByOffset(400,400).click().perform());
+                actions().moveByOffset(400, 400).click().perform());
         step("Проверить отображение модального окна", () ->
                 authorizationPage.checkModalTitle("Вы действительно хотите закрыть окно?"));
     }
@@ -61,7 +60,7 @@ class AuthorizationTest extends TestBase {
         step("Нажать кнопку Вход", () ->
                 authorizationPage.clickAuthButton());
         step("Кликнуть в любом месте экрана", () ->
-                actions().moveByOffset(400,400).click().perform());
+                actions().moveByOffset(400, 400).click().perform());
         step("Нажать кнопку Подтвердить", () ->
                 authorizationPage.clickModalSubmitButton());
         step("Проверить закрытие модального окна", () ->
@@ -79,7 +78,7 @@ class AuthorizationTest extends TestBase {
         step("Нажать кнопку Вход", () ->
                 authorizationPage.clickAuthButton());
         step("Кликнуть в любом месте экрана", () ->
-                actions().moveByOffset(400,400).click().perform());
+                actions().moveByOffset(400, 400).click().perform());
         step("Нажать кнопку Отмена", () ->
                 authorizationPage.clickModalCancelButton());
         step("Проверка отображения формы авторизации", () ->
@@ -87,8 +86,6 @@ class AuthorizationTest extends TestBase {
 
 
     }
-
-
 
 
 }

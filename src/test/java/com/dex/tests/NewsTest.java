@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.sleep;
 import static io.qameta.allure.Allure.step;
 
+@DisplayName("Новости")
 class NewsTest extends TestBase {
     AuthorizationPage authorizationPage = new AuthorizationPage();
     NewsPage newsPage = new NewsPage();

@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
+@DisplayName("Профиль")
 class ProfileTest extends TestBase {
     ProfilePage profilePage = new ProfilePage();
     AuthorizationPage authorizationPage = new AuthorizationPage();

@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
+@DisplayName("Восстановление пароля")
 class ChangePassTest extends TestBase {
 
     ChangePassPage changePassPagePage = new ChangePassPage();
