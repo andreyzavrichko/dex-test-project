@@ -106,9 +106,6 @@ class RegistrationTest extends TestBase {
                 registrationPage.typeConfirmCheckbox());
         step("Нажимаем кнопку Зарегистрироваться", () ->
                 registrationPage.clickSubmit());
-        //Костыль, т.к. кнопка со второго раза срабатывает
-        step("Нажимаем кнопку Зарегистрироваться", () ->
-                registrationPage.clickSubmit());
         step("Проверить переход к экрану создания профиля", () ->
                 registrationPage.checkSuccessTitle("Вы успешно зарегистрировались"));
     }
@@ -147,9 +144,6 @@ class RegistrationTest extends TestBase {
                 registrationPage.typeConfirmPassword(confirmPassword));
         step("Установить чек-бокс", () ->
                 registrationPage.typeConfirmCheckbox());
-        step("Нажимаем кнопку Зарегистрироваться", () ->
-                registrationPage.clickSubmit());
-        //Костыль, т.к. кнопка со второго раза срабатывает
         step("Нажимаем кнопку Зарегистрироваться", () ->
                 registrationPage.clickSubmit());
         step("Нажимаем кнопку Войти в аккаунт", () ->

@@ -20,6 +20,7 @@ public class ProfilePage {
             profileButton = $("[fill=none]"),
             profileLink = $(byText("Профиль")),
             profileTitle = $(byText("Профиль пользователя")),
+            editButton = $(byText("Редактировать профиль")),
             profileNameTitle = $(byText("Имя:")),
             profileMiddleNameTitle = $(byText("Фамилия:")),
             profileLastNameTitle = $(byText("Отчество:")),
@@ -31,6 +32,10 @@ public class ProfilePage {
     submitButton = $("[type=submit]"),
             successPassTitle = $(byText("Вы успешно восстановили пароль")),
 
+    firstNameInput = $("[name=firstName]"),
+            middleNameInput = $("[name=middleName]"),
+            lastNameInput = $("[name=lastName]"),
+            birthDayInput = $("[name=birthDay]"),
 
     authRegButton = $(byText("Войти в аккаунт")),
 
@@ -45,6 +50,9 @@ public class ProfilePage {
     }
     public void clickProfileLink() {
         profileLink.click();
+    }
+    public void clickEditButton() {
+        editButton.click();
     }
 
     public void clickAuthRegButton() {
@@ -138,7 +146,20 @@ public class ProfilePage {
         profilePhoneTitle.shouldHave(text(value));
     }
 
+    public void typeFirstName(String value) {
+        firstNameInput.setValue(value);
+    }
 
+    public void typeLastName(String value) {
+        lastNameInput.setValue(value);
+    }
+
+    public void typeMiddleName(String value) {
+        middleNameInput.setValue(value);
+    }
+    public void typeBirthDay(String value) {
+        birthDayInput.setValue(value);
+    }
 
 
 }
