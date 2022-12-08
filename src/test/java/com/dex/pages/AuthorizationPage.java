@@ -13,9 +13,14 @@ public class AuthorizationPage {
             authButton = $(byText("Вход")),
             phoneInput = $("[name=phone]"),
 
+
             passwordInput = $("[name=password]"),
             submitButton = $("[type=submit]"),
             newsLink = $(byText("новости")),
+            modalTitle = $(byText("Вы действительно хотите закрыть окно?")),
+            modalSubmitButton = $(byText("Подтвердить")),
+            modalCancelButton = $(byText("Отмена")),
+            authForm = $(byText("Вход на портал")),
 
 
             confirmButton = $(byText("Подтвердить"));
@@ -23,6 +28,12 @@ public class AuthorizationPage {
 
     public void clickAuthButton() {
         authButton.click();
+    }
+    public void clickModalSubmitButton() {
+        modalSubmitButton.click();
+    }
+    public void clickModalCancelButton() {
+        modalCancelButton.click();
     }
 
     public void openPage() {
@@ -45,5 +56,16 @@ public class AuthorizationPage {
     }
 
 
+    public void checkModalTitle(String value) {
+        modalTitle.shouldHave(text(value));
+    }
+
+    public void checkUnvisibleModal() {
+        modalTitle.shouldNotBe(visible);
+    }
+
+    public void checkAuthForm() {
+        authForm.shouldBe(visible);
+    }
 
 }
