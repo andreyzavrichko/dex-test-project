@@ -40,7 +40,7 @@ class ProfileTest extends TestBase {
     String newConfirmPassword = "Pass5rd%";
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Проверка экрана Профиль")
@@ -79,7 +79,7 @@ class ProfileTest extends TestBase {
     }
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Редактирование профиля")
@@ -151,7 +151,7 @@ class ProfileTest extends TestBase {
     }
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Смена пароля в профиле")

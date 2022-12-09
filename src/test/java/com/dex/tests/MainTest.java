@@ -19,7 +19,7 @@ class MainTest extends TestBase {
     MainPage mainPage = new MainPage();
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Главная")
     @Story("Главная")
     @DisplayName("Проверка главной страницы")

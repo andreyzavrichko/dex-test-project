@@ -20,7 +20,7 @@ class NewsTest extends TestBase {
     NewsPage newsPage = new NewsPage();
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Новости")
     @Story("Новости")
     @DisplayName("Открытие новостей")
@@ -47,7 +47,7 @@ class NewsTest extends TestBase {
     }
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Новости")
     @Story("Новости")
     @DisplayName("Открытие отдельной новости")
@@ -74,7 +74,7 @@ class NewsTest extends TestBase {
     }
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Новости")
     @Story("Новости")
     @DisplayName("Подгрузка новостей")
@@ -104,7 +104,7 @@ class NewsTest extends TestBase {
     }
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Новости")
     @Story("Новости")
     @DisplayName("Проверка скрытия новостей")

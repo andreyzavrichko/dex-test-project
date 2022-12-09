@@ -28,7 +28,7 @@ class RegistrationTest extends TestBase {
 
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация на новый номер - проверка перехода на экран смс кода")
@@ -49,7 +49,7 @@ class RegistrationTest extends TestBase {
     }
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация на новый номер - проверка перехода на экран создания профиля")
@@ -74,7 +74,7 @@ class RegistrationTest extends TestBase {
     }
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация на новый номер - проверка успешного создания")
@@ -115,7 +115,7 @@ class RegistrationTest extends TestBase {
     }
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Авторизация после регистрации")

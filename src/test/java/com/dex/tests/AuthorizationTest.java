@@ -17,7 +17,7 @@ class AuthorizationTest extends TestBase {
     AuthorizationPage authorizationPage = new AuthorizationPage();
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Авторизация")
     @Story("Авторизация")
     @DisplayName("Авторизация с валидными данными")
@@ -38,7 +38,7 @@ class AuthorizationTest extends TestBase {
     }
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Авторизация")
     @Story("Авторизация")
     @DisplayName("Проверка отображения модального окна")
@@ -55,7 +55,7 @@ class AuthorizationTest extends TestBase {
     }
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Авторизация")
     @Story("Авторизация")
     @DisplayName("Проверка закрытия модального окна")
@@ -74,7 +74,7 @@ class AuthorizationTest extends TestBase {
     }
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Авторизация")
     @Story("Авторизация")
     @DisplayName("Проверка кнопки отмена модального окна")
@@ -97,7 +97,7 @@ class AuthorizationTest extends TestBase {
     @Feature("Авторизация")
     @Story("Авторизация")
     @DisplayName("Проверка поля номер телефона")
-    @Tag("RegressTest")
+    @Tag("regress")
     @Severity(SeverityLevel.NORMAL)
     @CsvSource(value = {
             "!!!, Длина номера должна быть 11 символов",
@@ -162,7 +162,7 @@ class AuthorizationTest extends TestBase {
     @Feature("Авторизация")
     @Story("Авторизация")
     @DisplayName("Проверка поля пароль")
-    @Tag("RegressTest")
+    @Tag("regress")
     @Severity(SeverityLevel.NORMAL)
     @CsvSource(value = {
             "!!!, Длина пароля должна быть больше 8 символов",

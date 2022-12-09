@@ -31,7 +31,7 @@ class ChangePassTest extends TestBase {
     String confirmPassword = "Passw0rd%";
 
     @Test
-    @Tag("SmokeTest")
+    @Tag("smoke")
     @Feature("Восстановление пароля")
     @Story("Восстановление пароля")
     @DisplayName("Восстановление пароля")
