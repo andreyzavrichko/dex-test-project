@@ -236,7 +236,7 @@ class ProfileTest extends TestBase {
     // Негативные сценарии
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Редактирование профиля - удаление имени")
@@ -298,7 +298,7 @@ class ProfileTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Редактирование профиля - удаление фамилии")
@@ -360,7 +360,7 @@ class ProfileTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Редактирование профиля - удаление отчества")
@@ -422,7 +422,7 @@ class ProfileTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Редактирование профиля - удаление дня рождения")
@@ -484,7 +484,7 @@ class ProfileTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Редактирование профиля - установка дня рождения в будущем")
@@ -548,7 +548,7 @@ class ProfileTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Смена пароля в профиле - проверка обязательности пароля")
@@ -610,7 +610,7 @@ class ProfileTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Смена пароля в профиле - проверка обязательности подтверждения пароля")
@@ -672,7 +672,7 @@ class ProfileTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Смена пароля в профиле - проверка совпадения паролей")
@@ -736,7 +736,7 @@ class ProfileTest extends TestBase {
     }
 
 
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Смена пароля")
     @Story("Профиль")
     @DisplayName("Смена пароля в профиле")
@@ -846,7 +846,7 @@ class ProfileTest extends TestBase {
                 profilePage.checkInputError(expectedResult));
     }
 
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Смена пароля")
     @Story("Профиль")
     @DisplayName("Смена пароля в профиле - подтверждение пароля")

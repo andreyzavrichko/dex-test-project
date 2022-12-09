@@ -374,7 +374,7 @@ class ChangePassTest extends TestBase {
                 changePassPagePage.checkInputError(expectedResult));
     }
 
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Восстановление пароля")
     @Story("Восстановление пароля")
     @DisplayName("Восстановление пароля")
@@ -495,7 +495,7 @@ class ChangePassTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Восстановление пароля")
     @Story("Восстановление пароля")
     @DisplayName("Восстановление пароля - пароли должны совпадать")

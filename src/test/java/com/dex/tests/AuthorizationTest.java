@@ -227,7 +227,7 @@ class AuthorizationTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Авторизация")
     @Story("Авторизация")
     @DisplayName("Авторизация с пустыми данными")

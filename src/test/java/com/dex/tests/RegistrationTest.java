@@ -167,7 +167,7 @@ class RegistrationTest extends TestBase {
 
     // Негативные сценарии
 
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация - проверка номера телефона")
@@ -232,7 +232,7 @@ class RegistrationTest extends TestBase {
                 registrationPage.checkInputError(expectedResult));
     }
 
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация")
@@ -271,7 +271,7 @@ class RegistrationTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация на новый номер - проверка ошибки календаря")
@@ -312,7 +312,7 @@ class RegistrationTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация на новый номер - проверка ошибки обязательности Имени")
@@ -351,7 +351,7 @@ class RegistrationTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация на новый номер - проверка ошибки обязательности Фамилии")
@@ -390,7 +390,7 @@ class RegistrationTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация на новый номер - проверка ошибки обязательности Отчества")
@@ -429,7 +429,7 @@ class RegistrationTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация на новый номер - проверка ошибки обязательности Даты рождения")
@@ -468,7 +468,7 @@ class RegistrationTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация на новый номер - проверка ошибки обязательности Пароля")
@@ -507,7 +507,7 @@ class RegistrationTest extends TestBase {
     }
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация на новый номер - проверка ошибки обязательности Повторения Пароля")
@@ -545,7 +545,7 @@ class RegistrationTest extends TestBase {
                 registrationPage.checkInputError("Заполните обязательное поле"));
     }
 
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация")
@@ -632,7 +632,7 @@ class RegistrationTest extends TestBase {
                 registrationPage.checkInputError(expectedResult));
     }
 
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация")
@@ -721,7 +721,7 @@ class RegistrationTest extends TestBase {
 
 
     @Test
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация - пароли должны совпадать")
