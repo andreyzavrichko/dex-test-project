@@ -243,6 +243,27 @@ class AuthorizationTest extends TestBase {
                 authorizationPage.checkInputError("Заполните обязательное поле"));
     }
 
+    @Test
+    @Tag("smoke")
+    @Feature("Авторизация")
+    @Story("Авторизация")
+    @DisplayName("Авторизация с незарегистрированным номером")
+    @Severity(SeverityLevel.BLOCKER)
+    void authorizationNegativePhoneTest() {
+        step("Открываем сайт", () ->
+                authorizationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                authorizationPage.clickAuthButton());
+        step("Заполнить номер телефона", () ->
+                authorizationPage.typePhone("700000000001"));
+        step("Заполнить пароль", () ->
+                authorizationPage.typePassword("Passw0rd%"));
+        step("Нажать на кнопку Войти", () ->
+                authorizationPage.clickSubmit());
+        step("Проверить всплывающую ошибку", () ->
+                authorizationPage.checkInputError("Учетная запись не найдена"));
+    }
+
 
 
 }
