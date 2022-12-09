@@ -69,9 +69,6 @@ class ChangePassTest extends TestBase {
                 registrationPage.typeConfirmCheckbox());
         step("Нажимаем кнопку Зарегистрироваться", () ->
                 registrationPage.clickSubmit());
-        //Костыль, т.к. кнопка со второго раза срабатывает
-        step("Нажимаем кнопку Зарегистрироваться", () ->
-                registrationPage.clickSubmit());
         step("Нажимаем кнопку Войти в аккаунт", () ->
                 registrationPage.clickAuthRegButton());
         step("Заполнить номер телефона", () ->
@@ -161,7 +158,7 @@ class ChangePassTest extends TestBase {
             "$&%^#$%^, Длина номера должна быть 11 символов",
             "%$$^%^%$^, Длина номера должна быть 11 символов"})
     @ParameterizedTest(name = "Проверка поля номер телефона при восстановлении с тестовыми данными: {0}")
-    void passwordAuthTest(String testData, String expectedResult) {
+    void changePassNegativeTest(String testData, String expectedResult) {
         step("Открываем сайт", () ->
                 changePassPagePage.openPage());
         step("Нажать кнопку Вход", () ->
@@ -171,7 +168,85 @@ class ChangePassTest extends TestBase {
         step("Заполнить номер телефона", () ->
                 changePassPagePage.typePhone(testData));
         step("Нажать на кнопку Восстановить", () ->
-                changePassPagePage.clickReestablishButton());;
+                changePassPagePage.clickReestablishButton());
+        step("Проверить отображение ошибки валидации", () ->
+                changePassPagePage.checkInputError(expectedResult));
+    }
+
+    @Tag("smoke")
+    @Feature("Восстановление пароля")
+    @Story("Восстановление пароля")
+    @DisplayName("Восстановление пароля - пустой номер телефона")
+    @Severity(SeverityLevel.BLOCKER)
+    @CsvSource(value = {
+            "1111, Не найдено",
+            "2222, Не найдено",
+            "3333, Не найдено",
+            "4444, Не найдено",
+            "5555, Не найдено",
+            "6666, Не найдено",
+            "7777, Не найдено",
+            "8888, Не найдено",
+            "9999, Не найдено"})
+    @ParameterizedTest(name = "Проверка поля ввода смс кода с тестовыми данными: {0}")
+    void changePassSmsCodeTest(String testData, String expectedResult) {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+        // Предусловие, дальше вынесем в отдельный компонент
+        step("Нажать кнопку Профиль", () ->
+                changePassPagePage.clickProfileButton());
+        step("Нажать кнопку Выход", () ->
+                changePassPagePage.clickExitButton());
+        step("Нажать кнопку Вход", () ->
+                changePassPagePage.clickAuthButton());
+        step("Нажать ссылку Восстановление пароля", () ->
+                changePassPagePage.clickChangePassButton());
+        step("Заполнить номер телефона", () ->
+                changePassPagePage.typePhone(phone));
+        step("Нажать на кнопку Восстановить", () ->
+                changePassPagePage.clickReestablishButton());
+        step("Ввести код из смс", () ->
+                changePassPagePage.typeSmsCode(testData));
+        step("Нажать на кнопку Восстановить", () ->
+                changePassPagePage.clickReestablishButton());
         step("Проверить отображение ошибки валидации", () ->
                 changePassPagePage.checkInputError(expectedResult));
     }
