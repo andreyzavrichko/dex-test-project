@@ -28,8 +28,7 @@ public class RegistrationPage {
             confirmPasswordInput = $("[name=confirmPassword]"),
             confirmCheckbox = $("[for=checkBox]"),
             submitButton = $("[type=submit]"),
-            newsLink = $(byText("новости")),
-            confirmButton = $(byText("Подтвердить"));
+            newsLink = $(byText("новости"));
 
 
     public void clickAuthButton() {
@@ -56,12 +55,9 @@ public class RegistrationPage {
         phoneInput.setValue(value);
     }
 
-
-
     public void typeSmsCode(String value) {
         smsCodeInput.setValue(value);
     }
-
 
     public void checkNewsLink() {
         newsLink.shouldBe(visible);
@@ -74,7 +70,6 @@ public class RegistrationPage {
     public void checkProfileTitle(String value) {
         profileTitle.shouldHave(text(value));
     }
-
 
     public void clickSubmit() {
         submitButton.click();
@@ -91,6 +86,7 @@ public class RegistrationPage {
     public void typeMiddleName(String value) {
         middleNameInput.setValue(value);
     }
+
     public void typeBirthDay(String value) {
         birthDayInput.setValue(value);
     }
@@ -107,13 +103,10 @@ public class RegistrationPage {
         confirmCheckbox.click();
     }
 
-    public void typeConfirmButton() {
-        confirmButton.click();
-    }
-
     public void checkSuccessTitle(String value) {
         successTitle.shouldHave(text(value));
     }
+
     public void checkInputError(String value) {
         rootElement.shouldHave(text(value));
     }

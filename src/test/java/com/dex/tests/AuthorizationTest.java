@@ -265,5 +265,4 @@ class AuthorizationTest extends TestBase {
     }
 
 
-
 }

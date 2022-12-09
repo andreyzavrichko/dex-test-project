@@ -14,20 +14,13 @@ public class ChangePassPage {
             rootElement = $("#root"),
             phoneInput = $("[name=phone]"),
             smsCodeInput = $("[ type=text]"),
-            continueButton = $(byText("Продолжить")),
             reestablishButton = $(byText("Восстановить")),
             exitButton = $(byText("Выход")),
             passwordInput = $("[name=password]"),
             confirmPasswordInput = $("[name=confirmPassword]"),
             profileButton = $("[fill=none]"),
-
-    submitButton = $("[type=submit]"),
-            successPassTitle = $(byText("Вы успешно восстановили пароль")),
-
-
-    authRegButton = $(byText("Войти в аккаунт")),
-
-    confirmButton = $(byText("Подтвердить"));
+            submitButton = $("[type=submit]"),
+            successPassTitle = $(byText("Вы успешно восстановили пароль"));
 
     public void openPage() {
         open("/");
@@ -36,32 +29,21 @@ public class ChangePassPage {
     public void clickAuthButton() {
         authButton.click();
     }
+
     public void clickReestablishButton() {
         reestablishButton.click();
     }
 
 
-
-
-    public void clickAuthRegButton() {
-        authRegButton.click();
-    }
-
     public void clickChangePassButton() {
         changePassButton.click();
     }
 
-    public void clickContinueButton() {
-        continueButton.click();
-    }
 
     public void typePhone(String value) {
         phoneInput.setValue(value);
     }
 
-    public void clickConfirmButton() {
-        confirmButton.click();
-    }
 
     public void typeSmsCode(String value) {
         smsCodeInput.setValue(value);
@@ -78,6 +60,7 @@ public class ChangePassPage {
     public void clickSubmitButton() {
         submitButton.click();
     }
+
     public void checkSuccessPassTitle(String value) {
         successPassTitle.shouldHave(text(value));
     }
@@ -85,6 +68,7 @@ public class ChangePassPage {
     public void clickProfileButton() {
         profileButton.click();
     }
+
     public void clickExitButton() {
         exitButton.click();
     }

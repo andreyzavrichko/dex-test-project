@@ -19,18 +19,17 @@ public class AuthorizationPage {
             modalTitle = $(byText("Вы действительно хотите закрыть окно?")),
             modalSubmitButton = $(byText("Подтвердить")),
             modalCancelButton = $(byText("Отмена")),
-            authForm = $(byText("Вход на портал")),
-
-
-            confirmButton = $(byText("Подтвердить"));
+            authForm = $(byText("Вход на портал"));
 
 
     public void clickAuthButton() {
         authButton.click();
     }
+
     public void clickModalSubmitButton() {
         modalSubmitButton.click();
     }
+
     public void clickModalCancelButton() {
         modalCancelButton.click();
     }
@@ -46,6 +45,7 @@ public class AuthorizationPage {
     public void typePassword(String value) {
         passwordInput.setValue(value);
     }
+
     public void checkNewsLink() {
         newsLink.shouldBe(visible);
     }
@@ -54,16 +54,13 @@ public class AuthorizationPage {
         submitButton.click();
     }
 
-
     public void checkModalTitle(String value) {
         modalTitle.shouldHave(text(value));
     }
+
     public void checkInputError(String value) {
         rootElement.shouldHave(text(value));
     }
-
-
-
 
     public void checkUnvisibleModal() {
         modalTitle.shouldNotBe(visible);

@@ -25,11 +25,8 @@ public class ProfilePage {
             rootElement = $("#root"),
             profileBirthdayTitle = $(byText("Дата рождения:")),
             profilePhoneTitle = $(byText("Телефон:")),
-
             submitButton = $("[type=submit]"),
-
             successChangePassTitle = $(byText("Вы успешно сменили пароль")),
-
             firstNameInput = $("[name=firstName]"),
             middleNameInput = $("[name=middleName]"),
             lastNameInput = $("[name=lastName]"),
@@ -141,7 +138,6 @@ public class ProfilePage {
     public void checkInputError(String value) {
         rootElement.shouldHave(text(value));
     }
-
 
     public void clearFirstNameInput() {
         firstNameInput.clear();
