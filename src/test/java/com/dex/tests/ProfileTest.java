@@ -231,6 +231,7 @@ class ProfileTest extends TestBase {
                 authorizationPage.checkNewsLink());
     }
 
+    // Негативные сценарии
 
     @Test
     @Tag("smoke")
@@ -543,5 +544,194 @@ class ProfileTest extends TestBase {
         step("Проверить отображение ошибки валидации", () ->
                 registrationPage.checkInputError("Дата рождения должна быть меньше текущей"));
     }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Профиль")
+    @Story("Профиль")
+    @DisplayName("Смена пароля в профиле - проверка обязательности пароля")
+    @Severity(SeverityLevel.BLOCKER)
+    void changePassInProfileRegTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+        // Основное действие
+        step("Нажать кнопку Профиль", () ->
+                profilePage.clickProfileButton());
+        step("Нажать ссылку Профиль", () ->
+                profilePage.clickProfileLink());
+        step("Нажать на кнопку Сменить пароль", () ->
+                profilePage.clickChangePasswordButton());
+        step("Заполнить поле Подтвердить новый пароль", () ->
+                profilePage.typeConfirmPassword(newConfirmPassword));
+        step("Нажать кнопку Готово", () ->
+                profilePage.clickSubmitButton());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Заполните обязательное поле"));
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Профиль")
+    @Story("Профиль")
+    @DisplayName("Смена пароля в профиле - проверка обязательности подтверждения пароля")
+    @Severity(SeverityLevel.BLOCKER)
+    void changeConfirmPassInProfileRegTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+        // Основное действие
+        step("Нажать кнопку Профиль", () ->
+                profilePage.clickProfileButton());
+        step("Нажать ссылку Профиль", () ->
+                profilePage.clickProfileLink());
+        step("Нажать на кнопку Сменить пароль", () ->
+                profilePage.clickChangePasswordButton());
+        step("Заполнить поле Новый пароль", () ->
+                profilePage.typePassword(newPassword));
+        step("Нажать кнопку Готово", () ->
+                profilePage.clickSubmitButton());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Заполните обязательное поле"));
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Профиль")
+    @Story("Профиль")
+    @DisplayName("Смена пароля в профиле - проверка совпадения")
+    @Severity(SeverityLevel.BLOCKER)
+    void matchPassInProfileTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+        // Основное действие
+        step("Нажать кнопку Профиль", () ->
+                profilePage.clickProfileButton());
+        step("Нажать ссылку Профиль", () ->
+                profilePage.clickProfileLink());
+        step("Нажать на кнопку Сменить пароль", () ->
+                profilePage.clickChangePasswordButton());
+        step("Заполнить поле Новый пароль", () ->
+                profilePage.typePassword(newPassword));
+        step("Заполнить поле Подтвердите новый пароль", () ->
+                profilePage.typeConfirmPassword("123456789"));
+        step("Нажать кнопку Готово", () ->
+                profilePage.clickSubmitButton());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Пароли должны совпадать"));
+    }
+
 
 }
