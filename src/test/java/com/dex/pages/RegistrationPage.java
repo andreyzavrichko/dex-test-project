@@ -13,7 +13,7 @@ public class RegistrationPage {
             authButton = $(byText("Вход")),
             regButton = $(byText("Регистрация")),
             phoneInput = $("[name=phone]"),
-
+            rootElement = $("#root"),
             continueButton = $(byText("Продолжить")),
             smsFormTitle = $(byText("подтвердите номер телефона")),
             profileTitle = $(byText("укажите ваши данные")),
@@ -114,6 +114,8 @@ public class RegistrationPage {
     public void checkSuccessTitle(String value) {
         successTitle.shouldHave(text(value));
     }
-
+    public void checkInputError(String value) {
+        rootElement.shouldHave(text(value));
+    }
 
 }
