@@ -138,5 +138,24 @@ public class ProfilePage {
         birthDayInput.setValue(value);
     }
 
+    public void checkInputError(String value) {
+        rootElement.shouldHave(text(value));
+    }
 
+
+    public void clearFirstNameInput() {
+        firstNameInput.clear();
+    }
+
+    public void clearMiddleNameInput() {
+        middleNameInput.clear();
+    }
+
+    public void clearLastNameInput() {
+        lastNameInput.clear();
+    }
+
+    public void clearBirthDayInput() {
+        birthDayInput.clear();
+    }
 }

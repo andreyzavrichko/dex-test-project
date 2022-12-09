@@ -232,4 +232,316 @@ class ProfileTest extends TestBase {
     }
 
 
+    @Test
+    @Tag("smoke")
+    @Feature("Профиль")
+    @Story("Профиль")
+    @DisplayName("Редактирование профиля - удаление имени")
+    @Severity(SeverityLevel.BLOCKER)
+    void deleteFirstNameProfileTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+        // Основное действие
+        step("Нажать кнопку Профиль", () ->
+                profilePage.clickProfileButton());
+        step("Нажать ссылку Профиль", () ->
+                profilePage.clickProfileLink());
+        step("Нажать ссылку Редактировать профиль", () ->
+                profilePage.clickEditButton());
+        step("Очищаем поле имя", () ->
+                profilePage.clearFirstNameInput());
+        step("Нажать кнопку Сохранить", () ->
+                profilePage.clickSubmitButton());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Заполните обязательное поле"));
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Профиль")
+    @Story("Профиль")
+    @DisplayName("Редактирование профиля - удаление фамилии")
+    @Severity(SeverityLevel.BLOCKER)
+    void deleteLastNameProfileTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+        // Основное действие
+        step("Нажать кнопку Профиль", () ->
+                profilePage.clickProfileButton());
+        step("Нажать ссылку Профиль", () ->
+                profilePage.clickProfileLink());
+        step("Нажать ссылку Редактировать профиль", () ->
+                profilePage.clickEditButton());
+        step("Очищаем поле Фамилия", () ->
+                profilePage.clearMiddleNameInput());
+        step("Нажать кнопку Сохранить", () ->
+                profilePage.clickSubmitButton());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Заполните обязательное поле"));
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Профиль")
+    @Story("Профиль")
+    @DisplayName("Редактирование профиля - удаление отчества")
+    @Severity(SeverityLevel.BLOCKER)
+    void deleteMiddleNameProfileTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+        // Основное действие
+        step("Нажать кнопку Профиль", () ->
+                profilePage.clickProfileButton());
+        step("Нажать ссылку Профиль", () ->
+                profilePage.clickProfileLink());
+        step("Нажать ссылку Редактировать профиль", () ->
+                profilePage.clickEditButton());
+        step("Очищаем поле Отчество", () ->
+                profilePage.clearLastNameInput());
+        step("Нажать кнопку Сохранить", () ->
+                profilePage.clickSubmitButton());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Заполните обязательное поле"));
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Профиль")
+    @Story("Профиль")
+    @DisplayName("Редактирование профиля - удаление дня рождения")
+    @Severity(SeverityLevel.BLOCKER)
+    void deleteBirthdayProfileTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+        // Основное действие
+        step("Нажать кнопку Профиль", () ->
+                profilePage.clickProfileButton());
+        step("Нажать ссылку Профиль", () ->
+                profilePage.clickProfileLink());
+        step("Нажать ссылку Редактировать профиль", () ->
+                profilePage.clickEditButton());
+        step("Очищаем поле День рождения", () ->
+                profilePage.clearBirthDayInput());
+        step("Нажать кнопку Сохранить", () ->
+                profilePage.clickSubmitButton());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Заполните обязательное поле"));
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Профиль")
+    @Story("Профиль")
+    @DisplayName("Редактирование профиля - установка дня рождения в будущем")
+    @Severity(SeverityLevel.BLOCKER)
+    void moreBirthdayProfileTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+        // Основное действие
+        step("Нажать кнопку Профиль", () ->
+                profilePage.clickProfileButton());
+        step("Нажать ссылку Профиль", () ->
+                profilePage.clickProfileLink());
+        step("Нажать ссылку Редактировать профиль", () ->
+                profilePage.clickEditButton());
+        step("Очищаем поле День рождения", () ->
+                profilePage.clearBirthDayInput());
+        step("Установить дату рождения в будущем", () ->
+                profilePage.typeBirthDay("01-01-9999"));
+        step("Нажать кнопку Сохранить", () ->
+                profilePage.clickSubmitButton());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Дата рождения должна быть меньше текущей"));
+    }
+
 }
