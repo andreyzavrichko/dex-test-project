@@ -105,6 +105,30 @@ class ChangePassTest extends TestBase {
                 changePassPagePage.clickSubmitButton());
         step("Проверить успешность смены пароля", () ->
                 changePassPagePage.checkSuccessPassTitle("Вы успешно восстановили пароль"));
-
     }
+
+    // Негативные сценарии
+
+    @Test
+    @Tag("smoke")
+    @Feature("Восстановление пароля")
+    @Story("Восстановление пароля")
+    @DisplayName("Восстановление пароля - пустой номер телефона")
+    @Severity(SeverityLevel.BLOCKER)
+    void changePassNullPhoneTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                changePassPagePage.clickAuthButton());
+        step("Нажать ссылку Восстановление пароля", () ->
+                changePassPagePage.clickChangePassButton());
+        step("Нажать на кнопку Восстановить", () ->
+                changePassPagePage.clickReestablishButton());
+        step("Проверить сообщение об ошибке", () ->
+                changePassPagePage.checkInputError("Заполните обязательное поле"));
+    }
+
+
+
+
 }

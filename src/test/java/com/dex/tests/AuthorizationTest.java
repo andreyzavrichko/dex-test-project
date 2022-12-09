@@ -226,5 +226,23 @@ class AuthorizationTest extends TestBase {
                 authorizationPage.checkInputError(expectedResult));
     }
 
+    @Test
+    @Tag("smoke")
+    @Feature("Авторизация")
+    @Story("Авторизация")
+    @DisplayName("Авторизация с пустыми данными")
+    @Severity(SeverityLevel.BLOCKER)
+    void authorizationNegativeTest() {
+        step("Открываем сайт", () ->
+                authorizationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                authorizationPage.clickAuthButton());
+        step("Нажать на кнопку Войти", () ->
+                authorizationPage.clickSubmit());
+        step("Проверить всплывающую ошибку", () ->
+                authorizationPage.checkInputError("Заполните обязательное поле"));
+    }
+
+
 
 }

@@ -11,6 +11,7 @@ public class ChangePassPage {
     SelenideElement
             authButton = $(byText("Вход")),
             changePassButton = $(byText("Восстановить пароль")),
+            rootElement = $("#root"),
             phoneInput = $("[name=phone]"),
             smsCodeInput = $("[ type=text]"),
             continueButton = $(byText("Продолжить")),
@@ -86,6 +87,10 @@ public class ChangePassPage {
     }
     public void clickExitButton() {
         exitButton.click();
+    }
+
+    public void checkInputError(String value) {
+        rootElement.shouldHave(text(value));
     }
 
 }
