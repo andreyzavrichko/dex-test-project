@@ -108,7 +108,7 @@ class ChangePassTest extends TestBase {
 
     // Негативные сценарии
 
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Восстановление пароля")
     @Story("Восстановление пароля")
     @DisplayName("Восстановление пароля - пустой номер телефона")
@@ -173,7 +173,7 @@ class ChangePassTest extends TestBase {
                 changePassPagePage.checkInputError(expectedResult));
     }
 
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Восстановление пароля")
     @Story("Восстановление пароля")
     @DisplayName("Восстановление пароля")
@@ -251,7 +251,7 @@ class ChangePassTest extends TestBase {
                 changePassPagePage.checkInputError(expectedResult));
     }
 
-    @Tag("smoke")
+    @Tag("regress")
     @Feature("Восстановление пароля")
     @Story("Восстановление пароля")
     @DisplayName("Восстановление пароля")
@@ -371,7 +371,199 @@ class ChangePassTest extends TestBase {
                 changePassPagePage.checkInputError(expectedResult));
     }
 
+    @Tag("smoke")
+    @Feature("Восстановление пароля")
+    @Story("Восстановление пароля")
+    @DisplayName("Восстановление пароля")
+    @Severity(SeverityLevel.BLOCKER)
+    @CsvSource(value = {
+            "!!!, Длина пароля должна быть больше 8 символов",
+            ", Заполните обязательное поле",
+            "152, Длина пароля должна быть больше 8 символов",
+            ".dsf, Длина пароля должна быть больше 8 символов",
+            "@@@, Длина пароля должна быть больше 8 символов",
+            "###, Длина пароля должна быть больше 8 символов",
+            "$$$, Длина пароля должна быть больше 8 символов",
+            "%%%, Длина пароля должна быть больше 8 символов",
+            "^^^, Длина пароля должна быть больше 8 символов",
+            "&&&, Длина пароля должна быть больше 8 символов",
+            "***, Длина пароля должна быть больше 8 символов",
+            "(((, Длина пароля должна быть больше 8 символов",
+            "))), Длина пароля должна быть больше 8 символов",
+            "___, Длина пароля должна быть больше 8 символов",
+            "+++, Длина пароля должна быть больше 8 символов",
+            "///, Длина пароля должна быть больше 8 символов",
+            "****, Длина пароля должна быть больше 8 символов",
+            "---, Длина пароля должна быть больше 8 символов",
+            "++++, Длина пароля должна быть больше 8 символов",
+            "№№№, Длина пароля должна быть больше 8 символов",
+            ";;;, Длина пароля должна быть больше 8 символов",
+            ":::, Длина пароля должна быть больше 8 символов",
+            "???, Длина пароля должна быть больше 8 символов",
+            "[[[, Длина пароля должна быть больше 8 символов",
+            "}}}, Длина пароля должна быть больше 8 символов",
+            "]]], Длина пароля должна быть больше 8 символов",
+            "{{{, Длина пароля должна быть больше 8 символов",
+            "$$%^, Длина пароля должна быть больше 8 символов",
+            "00000000000, Пароль должен содержать заглавную букву, цифру и спецсимвол",
+            "11111111111, Пароль должен содержать заглавную букву, цифру и спецсимвол",
+            "22222222222, Пароль должен содержать заглавную букву, цифру и спецсимвол",
+            "33333333333, Пароль должен содержать заглавную букву, цифру и спецсимвол",
+            "44444444444, Пароль должен содержать заглавную букву, цифру и спецсимвол",
+            "55555555555, Пароль должен содержать заглавную букву, цифру и спецсимвол",
+            "66666666666, Пароль должен содержать заглавную букву, цифру и спецсимвол",
+            "88888888888, Пароль должен содержать заглавную букву, цифру и спецсимвол",
+            "99999999999, Пароль должен содержать заглавную букву, цифру и спецсимвол",
+            "58456454, Пароль должен содержать заглавную букву, цифру и спецсимвол",
+            "$$%^, Длина пароля должна быть больше 8 символов",
+            "$$%^, Длина пароля должна быть больше 8 символов",
+            "$$%^, Длина пароля должна быть больше 8 символов",
+            "$&%^#$%^, Пароль должен содержать заглавную букву, цифру и спецсимвол",
+            "vdsdsfdsf, Пароль должен содержать заглавную букву, цифру и спецсимвол",
+            "vdsdfdsf, Пароль должен содержать заглавную букву, цифру и спецсимвол",
+            "%$$^%^%$^, Пароль должен содержать заглавную букву, цифру и спецсимвол"})
+    @ParameterizedTest(name = "Проверка поля нового пароля с тестовыми данными: {0}")
+    void changeConfirmPassTest(String testData, String expectedResult) {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+        // Предусловие, дальше вынесем в отдельный компонент
+        step("Нажать кнопку Профиль", () ->
+                changePassPagePage.clickProfileButton());
+        step("Нажать кнопку Выход", () ->
+                changePassPagePage.clickExitButton());
+        step("Нажать кнопку Вход", () ->
+                changePassPagePage.clickAuthButton());
+        step("Нажать ссылку Восстановление пароля", () ->
+                changePassPagePage.clickChangePassButton());
+        step("Заполнить номер телефона", () ->
+                changePassPagePage.typePhone(phone));
+        step("Нажать на кнопку Восстановить", () ->
+                changePassPagePage.clickReestablishButton());
+        step("Ввести код из смс", () ->
+                changePassPagePage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Восстановить", () ->
+                changePassPagePage.clickReestablishButton());
+        step("Заполнить поле Пароль", () ->
+                changePassPagePage.typePassword(testData));
+        step("Заполнить поле Подтвердить пароль", () ->
+                changePassPagePage.typeConfirmPassword(testData));
+        step("Нажать кнопку Готово", () ->
+                changePassPagePage.clickSubmitButton());
+        step("Проверить отображение ошибки валидации", () ->
+                changePassPagePage.checkInputError(expectedResult));
+    }
 
+    @Test
+    @Tag("smoke")
+    @Feature("Восстановление пароля")
+    @Story("Восстановление пароля")
+    @DisplayName("Восстановление пароля - пароли должны совпадать")
+    @Severity(SeverityLevel.BLOCKER)
+    void passMatchTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Нажимаем кнопку Войти в аккаунт", () ->
+                registrationPage.clickAuthRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Заполнить пароль", () ->
+                registrationPage.typePassword(password));
+        step("Нажать на кнопку Войти", () ->
+                registrationPage.clickSubmit());
+        step("Проверить переход в админ-панель", () ->
+                registrationPage.checkNewsLink());
+        // Предусловие, дальше вынесем в отдельный компонент
+        step("Нажать кнопку Профиль", () ->
+                changePassPagePage.clickProfileButton());
+        step("Нажать кнопку Выход", () ->
+                changePassPagePage.clickExitButton());
+        step("Нажать кнопку Вход", () ->
+                changePassPagePage.clickAuthButton());
+        step("Нажать ссылку Восстановление пароля", () ->
+                changePassPagePage.clickChangePassButton());
+        step("Заполнить номер телефона", () ->
+                changePassPagePage.typePhone(phone));
+        step("Нажать на кнопку Восстановить", () ->
+                changePassPagePage.clickReestablishButton());
+        step("Ввести код из смс", () ->
+                changePassPagePage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Восстановить", () ->
+                changePassPagePage.clickReestablishButton());
+        step("Заполнить поле Пароль", () ->
+                changePassPagePage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                changePassPagePage.typeConfirmPassword("111111111"));
+        step("Нажать кнопку Готово", () ->
+                changePassPagePage.clickSubmitButton());
+        step("Проверить отображение ошибки валидации ", () ->
+                changePassPagePage.checkInputError("Пароли должны совпадать"));
+    }
 
 
 }
