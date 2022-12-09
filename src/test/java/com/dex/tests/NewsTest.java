@@ -8,6 +8,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.sleep;
@@ -19,6 +20,7 @@ class NewsTest extends TestBase {
     NewsPage newsPage = new NewsPage();
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Новости")
     @Story("Новости")
     @DisplayName("Открытие новостей")
@@ -45,6 +47,7 @@ class NewsTest extends TestBase {
     }
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Новости")
     @Story("Новости")
     @DisplayName("Открытие отдельной новости")
@@ -71,6 +74,7 @@ class NewsTest extends TestBase {
     }
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Новости")
     @Story("Новости")
     @DisplayName("Подгрузка новостей")
@@ -100,6 +104,7 @@ class NewsTest extends TestBase {
     }
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Новости")
     @Story("Новости")
     @DisplayName("Проверка скрытия новостей")

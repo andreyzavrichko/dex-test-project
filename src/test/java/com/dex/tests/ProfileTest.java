@@ -10,6 +10,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -39,6 +40,7 @@ class ProfileTest extends TestBase {
     String newConfirmPassword = "Pass5rd%";
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Проверка экрана Профиль")
@@ -77,6 +79,7 @@ class ProfileTest extends TestBase {
     }
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Редактирование профиля")
@@ -148,6 +151,7 @@ class ProfileTest extends TestBase {
     }
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Профиль")
     @Story("Профиль")
     @DisplayName("Смена пароля в профиле")

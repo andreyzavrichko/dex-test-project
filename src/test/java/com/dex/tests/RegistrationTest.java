@@ -8,6 +8,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -27,6 +28,7 @@ class RegistrationTest extends TestBase {
 
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация на новый номер - проверка перехода на экран смс кода")
@@ -47,6 +49,7 @@ class RegistrationTest extends TestBase {
     }
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация на новый номер - проверка перехода на экран создания профиля")
@@ -71,6 +74,7 @@ class RegistrationTest extends TestBase {
     }
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация на новый номер - проверка успешного создания")
@@ -111,6 +115,7 @@ class RegistrationTest extends TestBase {
     }
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Авторизация после регистрации")

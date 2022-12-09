@@ -10,6 +10,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -30,6 +31,7 @@ class ChangePassTest extends TestBase {
     String confirmPassword = "Passw0rd%";
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Восстановление пароля")
     @Story("Восстановление пароля")
     @DisplayName("Восстановление пароля")

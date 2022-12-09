@@ -8,6 +8,7 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -18,6 +19,7 @@ class MainTest extends TestBase {
     MainPage mainPage = new MainPage();
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Главная")
     @Story("Главная")
     @DisplayName("Проверка главной страницы")

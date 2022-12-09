@@ -4,6 +4,7 @@ import com.dex.TestBase;
 import com.dex.pages.AuthorizationPage;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -16,6 +17,7 @@ class AuthorizationTest extends TestBase {
     AuthorizationPage authorizationPage = new AuthorizationPage();
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Авторизация")
     @Story("Авторизация")
     @DisplayName("Авторизация с валидными данными")
@@ -36,6 +38,7 @@ class AuthorizationTest extends TestBase {
     }
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Авторизация")
     @Story("Авторизация")
     @DisplayName("Проверка отображения модального окна")
@@ -52,6 +55,7 @@ class AuthorizationTest extends TestBase {
     }
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Авторизация")
     @Story("Авторизация")
     @DisplayName("Проверка закрытия модального окна")
@@ -70,6 +74,7 @@ class AuthorizationTest extends TestBase {
     }
 
     @Test
+    @Tag("SmokeTest")
     @Feature("Авторизация")
     @Story("Авторизация")
     @DisplayName("Проверка кнопки отмена модального окна")
@@ -92,6 +97,7 @@ class AuthorizationTest extends TestBase {
     @Feature("Авторизация")
     @Story("Авторизация")
     @DisplayName("Проверка поля номер телефона")
+    @Tag("RegressTest")
     @Severity(SeverityLevel.NORMAL)
     @CsvSource(value = {
             "!!!, Длина номера должна быть 11 символов",
@@ -156,6 +162,7 @@ class AuthorizationTest extends TestBase {
     @Feature("Авторизация")
     @Story("Авторизация")
     @DisplayName("Проверка поля пароль")
+    @Tag("RegressTest")
     @Severity(SeverityLevel.NORMAL)
     @CsvSource(value = {
             "!!!, Длина пароля должна быть больше 8 символов",
