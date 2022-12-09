@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class TestBase {
     @BeforeAll
     static void setUp() {
-        Configuration.browserSize = "1600x780";
+        Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demo1.k3s.dex-it.ru";
      //   Configuration.baseUrl = "http://localhost.client-dev.template.online:3000/";
 
