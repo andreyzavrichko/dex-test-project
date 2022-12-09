@@ -232,5 +232,39 @@ class RegistrationTest extends TestBase {
                 registrationPage.checkInputError(expectedResult));
     }
 
+    @Tag("smoke")
+    @Feature("Регистрация")
+    @Story("Регистрация")
+    @DisplayName("Регистрация")
+    @Severity(SeverityLevel.BLOCKER)
+    @CsvSource(value = {
+            "1111, Данный код не найден",
+            "2222, Данный код не найден",
+            "3333, Данный код не найден",
+            "4444, Данный код не найден",
+            "5555, Данный код не найден",
+            "6666, Данный код не найден",
+            "7777, Данный код не найден",
+            "8888, Данный код не найден",
+            "9999, Данный код не найден"})
+    @ParameterizedTest(name = "Проверка поля ввода смс кода с тестовыми данными: {0}")
+    void registrationSmsCodeTest(String testData, String expectedResult) {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(testData));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError(expectedResult));
+    }
 
 }
