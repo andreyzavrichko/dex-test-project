@@ -246,6 +246,9 @@ class RegistrationTest extends TestBase {
             "6666, Данный код не найден",
             "7777, Данный код не найден",
             "8888, Данный код не найден",
+            "1, Неверный код",
+            "12, Неверный код",
+            "123, Неверный код",
             "9999, Данный код не найден"})
     @ParameterizedTest(name = "Проверка поля ввода смс кода с тестовыми данными: {0}")
     void registrationSmsCodeTest(String testData, String expectedResult) {
@@ -265,6 +268,281 @@ class RegistrationTest extends TestBase {
                 registrationPage.clickContinueButton());
         step("Проверить отображение ошибки валидации", () ->
                 registrationPage.checkInputError(expectedResult));
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Регистрация")
+    @Story("Регистрация")
+    @DisplayName("Регистрация на новый номер - проверка ошибки календаря")
+    @Severity(SeverityLevel.BLOCKER)
+    void registrationProfileDataTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay("12-02-9999"));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Дата рождения должна быть меньше текущей"));
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Регистрация")
+    @Story("Регистрация")
+    @DisplayName("Регистрация на новый номер - проверка ошибки обязательности Имени")
+    @Severity(SeverityLevel.BLOCKER)
+    void registrationProfileFirstNameReqTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Заполните обязательное поле"));
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Регистрация")
+    @Story("Регистрация")
+    @DisplayName("Регистрация на новый номер - проверка ошибки обязательности Фамилии")
+    @Severity(SeverityLevel.BLOCKER)
+    void registrationProfileLastNameReqTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Заполните обязательное поле"));
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Регистрация")
+    @Story("Регистрация")
+    @DisplayName("Регистрация на новый номер - проверка ошибки обязательности Отчества")
+    @Severity(SeverityLevel.BLOCKER)
+    void registrationProfileMiddleNameReqTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Заполните обязательное поле"));
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Регистрация")
+    @Story("Регистрация")
+    @DisplayName("Регистрация на новый номер - проверка ошибки обязательности Даты рождения")
+    @Severity(SeverityLevel.BLOCKER)
+    void registrationProfileBirthDayReqTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Заполните обязательное поле"));
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Регистрация")
+    @Story("Регистрация")
+    @DisplayName("Регистрация на новый номер - проверка ошибки обязательности Пароля")
+    @Severity(SeverityLevel.BLOCKER)
+    void registrationProfilePassReqTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Подтвердить пароль", () ->
+                registrationPage.typeConfirmPassword(confirmPassword));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Заполните обязательное поле"));
+    }
+
+    @Test
+    @Tag("smoke")
+    @Feature("Регистрация")
+    @Story("Регистрация")
+    @DisplayName("Регистрация на новый номер - проверка ошибки обязательности Повторения Пароля")
+    @Severity(SeverityLevel.BLOCKER)
+    void registrationProfileConfirmPassReqTest() {
+        step("Открываем сайт", () ->
+                registrationPage.openPage());
+        step("Нажать кнопку Вход", () ->
+                registrationPage.clickAuthButton());
+        step("Нажать ссылку Регистрация", () ->
+                registrationPage.clickRegButton());
+        step("Заполнить номер телефона", () ->
+                registrationPage.typePhone(phone));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Ввести код из смс", () ->
+                registrationPage.typeSmsCode(smsCode));
+        step("Нажать на кнопку Продолжить", () ->
+                registrationPage.clickContinueButton());
+        step("Заполнить поле имя", () ->
+                registrationPage.typeFirstName(firstName));
+        step("Заполнить поле фамилия", () ->
+                registrationPage.typeMiddleName(middleName));
+        step("Заполнить поле отчество", () ->
+                registrationPage.typeLastName(lastName));
+        step("Заполнить поле Дата рождения", () ->
+                registrationPage.typeBirthDay(birthDay));
+        step("Заполнить поле Пароль", () ->
+                registrationPage.typePassword(password));
+        step("Установить чек-бокс", () ->
+                registrationPage.typeConfirmCheckbox());
+        step("Нажимаем кнопку Зарегистрироваться", () ->
+                registrationPage.clickSubmit());
+        step("Проверить отображение ошибки валидации", () ->
+                registrationPage.checkInputError("Заполните обязательное поле"));
     }
 
 }

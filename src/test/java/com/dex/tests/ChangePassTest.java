@@ -187,6 +187,9 @@ class ChangePassTest extends TestBase {
             "6666, Данный код не найден",
             "7777, Данный код не найден",
             "8888, Данный код не найден",
+            "1, Неверный код",
+            "12, Неверный код",
+            "123, Неверный код",
             "9999, Данный код не найден"})
     @ParameterizedTest(name = "Проверка поля ввода смс кода с тестовыми данными: {0}")
     void changePassSmsCodeTest(String testData, String expectedResult) {
