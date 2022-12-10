@@ -111,7 +111,7 @@ class ChangePassTest extends TestBase {
     @Tag("regress")
     @Feature("Восстановление пароля")
     @Story("Восстановление пароля")
-    @DisplayName("Восстановление пароля - пустой номер телефона")
+    @DisplayName("Восстановление пароля - проверка номера телефона")
     @Severity(SeverityLevel.BLOCKER)
     @CsvSource(value = {
             "!!!, Длина номера должна быть 11 символов",
@@ -176,7 +176,7 @@ class ChangePassTest extends TestBase {
     @Tag("regress")
     @Feature("Восстановление пароля")
     @Story("Восстановление пароля")
-    @DisplayName("Восстановление пароля")
+    @DisplayName("Восстановление пароля - неправильный смс код")
     @Severity(SeverityLevel.BLOCKER)
     @CsvSource(value = {
             "1111, Не найдено",
@@ -254,7 +254,7 @@ class ChangePassTest extends TestBase {
     @Tag("regress")
     @Feature("Восстановление пароля")
     @Story("Восстановление пароля")
-    @DisplayName("Восстановление пароля")
+    @DisplayName("Восстановление пароля - некорректный пароль")
     @Severity(SeverityLevel.BLOCKER)
     @CsvSource(value = {
             "!!!, Длина пароля должна быть больше 8 символов",
@@ -374,7 +374,7 @@ class ChangePassTest extends TestBase {
     @Tag("regress")
     @Feature("Восстановление пароля")
     @Story("Восстановление пароля")
-    @DisplayName("Восстановление пароля")
+    @DisplayName("Восстановление пароля - некорректный пароль подтверждения")
     @Severity(SeverityLevel.BLOCKER)
     @CsvSource(value = {
             "!!!, Длина пароля должна быть больше 8 символов",
