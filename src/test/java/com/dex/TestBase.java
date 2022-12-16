@@ -17,14 +17,14 @@ public class TestBase {
 
         // Конфигурация для удаленного запуска
 //        Configuration.remote = "http://149.154.70.38:4444/wd/hub";
-        Configuration.remote = System.getProperty("url");
-        Configuration.browser = System.getProperty("browser");
-       Configuration.browserVersion = System.getProperty("version");
+   //     Configuration.remote = System.getProperty("url");
+    //    Configuration.browser = System.getProperty("browser");
+     //  Configuration.browserVersion = System.getProperty("version");
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", false);
-        Configuration.browserCapabilities = capabilities;
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setCapability("enableVNC", true);
+//        capabilities.setCapability("enableVideo", false);
+//        Configuration.browserCapabilities = capabilities;
     }
 
     @AfterEach

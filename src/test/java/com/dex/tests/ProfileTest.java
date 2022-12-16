@@ -53,7 +53,7 @@ class ProfileTest extends TestBase {
         step("Нажать кнопку Вход", () ->
                 authorizationPage.clickAuthButton());
         step("Заполнить номер телефона", () ->
-                authorizationPage.typePhone("72355555524"));
+                authorizationPage.typePhone("77777777777"));
         step("Заполнить пароль", () ->
                 authorizationPage.typePassword("Passw0rd%"));
         step("Нажать на кнопку Войти", () ->

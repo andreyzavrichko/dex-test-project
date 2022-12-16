@@ -15,6 +15,8 @@ import static io.qameta.allure.Allure.step;
 @DisplayName("Авторизация")
 class AuthorizationTest extends TestBase {
     AuthorizationPage authorizationPage = new AuthorizationPage();
+    String phone = "77777777777";
+    String pass = "Passw0rd%";
 
     @Test
     @Tag("smoke")
@@ -28,9 +30,9 @@ class AuthorizationTest extends TestBase {
         step("Нажать кнопку Вход", () ->
                 authorizationPage.clickAuthButton());
         step("Заполнить номер телефона", () ->
-                authorizationPage.typePhone("723555555241"));
+                authorizationPage.typePhone(phone));
         step("Заполнить пароль", () ->
-                authorizationPage.typePassword("Passw0rd%"));
+                authorizationPage.typePassword(pass));
         step("Нажать на кнопку Войти", () ->
                 authorizationPage.clickSubmit());
         step("Проверить переход в админ-панель", () ->
