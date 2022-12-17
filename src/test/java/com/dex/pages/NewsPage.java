@@ -6,6 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -40,13 +41,17 @@ public class NewsPage {
         newsItemTitle.shouldHave(text(value));
     }
 
+    public void checkNewsItemTitleShouldBe() {
+        newsItemTitle.shouldBe(visible);
+    }
+
     public void checkNewsTitle(String value) {
         newsTitle.shouldHave(text(value));
     }
 
     // Проверяем количество карточек
     public void checkNewItem() {
-        newItem.shouldHave(sizeGreaterThan(2));
+        newItem.shouldHave(sizeGreaterThan(1));
     }
 
     public void checkMoreNewsItem() {

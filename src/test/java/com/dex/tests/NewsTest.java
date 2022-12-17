@@ -72,7 +72,7 @@ class NewsTest extends TestBase {
         step("Открыть первую новость", () ->
                 newsPage.clickNewsItemTitle());
         step("Проверить заголовок первой новости", () ->
-                newsPage.checkNewsItemTitle("Хакеры взломали тайваньскую учётную запись Nvidia в Twitter ради мошеннической рекламы Dogecoin"));
+                newsPage.checkNewsItemTitleShouldBe());
     }
 
     @Test
