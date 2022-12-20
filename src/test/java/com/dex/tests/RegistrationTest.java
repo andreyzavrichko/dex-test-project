@@ -167,7 +167,7 @@ class RegistrationTest extends TestBase {
 
     // Негативные сценарии
 
-    @Tag("regress")
+    @Tag("smoke")
     @Feature("Регистрация")
     @Story("Регистрация")
     @DisplayName("Регистрация - проверка номера телефона")

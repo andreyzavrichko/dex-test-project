@@ -13,18 +13,20 @@ public class TestBase {
     static void setUp() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demo1.k3s.dex-it.ru";
-        //   Configuration.baseUrl = "http://localhost.client-dev.template.online:3000/";
+        // Для локального сервера
+        // Configuration.baseUrl = "http://localhost.client-dev.template.online:3000/";
 
         // Конфигурация для удаленного запуска
-//        Configuration.remote = "http://149.154.70.38:4444/wd/hub";
-   //     Configuration.remote = System.getProperty("url");
-    //    Configuration.browser = System.getProperty("browser");
-     //  Configuration.browserVersion = System.getProperty("version");
+//         Configuration.remote = "http://149.154.70.38:4444/wd/hub";
+//         Configuration.remote = System.getProperty("url");
+//         Configuration.browser = System.getProperty("browser");
+//         Configuration.browserVersion = System.getProperty("version");
 
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("enableVNC", true);
-//        capabilities.setCapability("enableVideo", false);
-//        Configuration.browserCapabilities = capabilities;
+        // Конфигурация создания сессии в Selenoid
+//         DesiredCapabilities capabilities = new DesiredCapabilities();
+//         capabilities.setCapability("enableVNC", true);
+//         capabilities.setCapability("enableVideo", false);
+//         Configuration.browserCapabilities = capabilities;
     }
 
     @AfterEach
